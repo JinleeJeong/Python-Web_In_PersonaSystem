@@ -1,14 +1,16 @@
-from bs4 import BeautifulSoup
 import requests
+from bs4 import BeautifulSoup
 
-header ={'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko'}
-news = requests.get('https://media.daum.net/economic/', headers=header)
+with requests.Session() as s:
+    req = s.get('https://beomi.github.io/beomi.github.io_old/')
+    html = req.text
+    soup = BeautifulSoup(html, 'html.parser')
+    my_titles = soup.select('h3 > a')
+    # my_titles는 list 객체
+    for title in my_titles:
+        # Tag안의 텍스트
+        print(title.text)
+        # Tag의 속성을 가져오기(ex: href속성)
+        print(title.get('href'))
 
-new = news.text
-
-soup = BeautifulSoup(new, 'html.parser')
-
-tag = soup.select('strong.tit_thumb')
-
-for i in tag:
-    print(i.get_text())
+        #Session()을 이용해 로그인 후 크롤링 가능능
