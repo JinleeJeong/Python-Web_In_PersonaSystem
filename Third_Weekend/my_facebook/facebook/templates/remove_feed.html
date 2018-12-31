@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+​
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>뉴스피드</title>
+    <style>
+        body {
+            background-color: #d7d8dc;
+            margin-top: -21px;
+         }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        .header {
+            background-color: #475d9f;
+            color: #fff;
+            border-bottom: 1px solid #2c3863;
+            height: 42px;
+            position:fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+         .btn1 {
+            position: absolute;
+            left: 0px;
+        }
+         .search {
+            position: absolute;
+            left: 50px;
+            right: 50px;
+            top: 0px;
+        }
+        .btn2 {
+            position: absolute;
+            right:0px;
+            top:2px;
+        }
+        .container {
+            background-color: #d7d8dc;
+            padding-top:42px;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-top: 1px solid #cccccc;
+            background-color: #ffffff;
+            height: 50px;
+            background-color: #fafafa;
+            text-align: center;
+        }
+        .tab1 {
+            float: left;
+            width: 25%;
+        }
+        .tab2 {
+            float: left;
+            width: 25%;
+        }
+        .tab3 {
+            float: left;
+            width: 25%;
+        }
+        .tab4 {
+            float: left;
+            width: 25%;
+        }
+        .searchbar {
+        border: 1px solid #2c3863;
+        background-color: #323f6b;
+        color: #fff;
+        width: 100%;
+        margin-top: 7px;
+        border-radius: 4px;
+        padding: 6px;
+        }
+        .date {
+        color: #999;
+        margin-bottom: 10px;
+        }
+        .title {
+            color: #6184dddd;
+            font-weight: 600;
+        }
+        .content {
+            margin-top: 5px;
+        }
+        .accessory {
+            border-top: 1px solid #eee;
+            padding-top:10px;
+            margin-top:10px;
+            color: #999;
+            font-size: 14px;
+        }
+        .feed {
+            background-color: #ffffff;
+            border-top: 1px solid #c0c0c0;
+            border-bottom: 1px solid #c0c0c0;
+            margin: 7px 0;
+            padding: 12px;
+        }
+        .more {
+            font-size: 14px;
+            color: #6184dddd;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .form_box {
+            background-color: #ffffff;
+            margin: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .input_field {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 4px;
+            margin: 5px 0;
+            font-size: 14px;
+            width: 100%;
+        }
+        .textarea_field {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 4px;
+            margin: 3px 0;
+            font-size: 14px;
+            width: 100%;
+            height: 160px;
+        }
+        .write_button {
+            background-color: #475d9f;
+            border: 1px solid #323f6b;
+            color: #ffffff;
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-soze: 18px;
+        }
+        </style>
+</head>
+​
+<body>
+    <div class="header">
+        <a href="/new_feed"><div class=“btn1"><img src="/static/ic_pencil.jpg" width="22px" style="margin:9px 0 0 13px"></div></a>
+        <div class="search"><input type="text" class="searchbar" placeholder="Search"></div>
+        <div class="btn2"><img src="/static/ic_info.jpg" width="22px" style="margin:9px 13px 0 0"></div>
+    </div>
+    <div class="container">
+
+       <div class="form_box">
+            <form method="POST">
+                {% csrf_token %}
+                <h3>{{feed.title}} - 삭제하기</h3><br>
+                <input class="input_field" type="password" placeholder="글 비밀번호" name="password"><br>
+                <button class="write_button">삭제</button>
+            </form>
+        </div>
+
+    </div>
+    <div class="footer">
+        <div class="tab1"><img src="/static/ic_feed.jpg" width="22px" style="margin-top: 15px"></div>
+        <div class="tab2"><img src="/static/ic_person.jpg" width="20px" style="margin-top: 14px"></div>
+        <div class="tab3"><img src="/static/ic_globe.jpg" width="20px" style="margin-top: 14px"></div>
+        <div class="tab4"><img src="/static/ic_etc.jpg" width="20px" style="margin-top: 14px"></div>
+    </div>
+
+
+</body>
+​
+</html>

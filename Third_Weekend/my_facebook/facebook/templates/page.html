@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>page list</title>
+</head>
+        <body>
+            {% for x in pages %}
+            ​
+            <div style="border:1px solid #b2b2b2; padding:10px; margin: 10px;">
+            {{ x.name }} - {{ x.master}} ({{ x.category }})<br>
+            {{ x.text }}<br>
+            - {{ x.created_at }}
+            </div>
+            ​
+            {% endfor %}
+        </body>
+</html>
