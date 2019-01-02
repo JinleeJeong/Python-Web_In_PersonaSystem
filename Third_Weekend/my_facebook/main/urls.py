@@ -16,19 +16,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from facebook.views import newsfeed,detail_feed, new_feed, event, profile, play_two, play, page, remove_feed, edit_feed, fail
+from facebook.views import newsfeed,detail_feed, new_feed, remove_feed, edit_feed, fail, remove_comment_feed, new_comment_feed
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('play/', play),
-    path('play_two/', play_two),
-    path('Daniel/profile/', profile),
-    path('event/', event),
-    path('newsfeed/', newsfeed),
+    path(r'', newsfeed),
     path('feed/<pk>/', detail_feed),
-    path('page/', page),
     path('new_feed/', new_feed),
     path('feed/<pk>/remove/', remove_feed),
     path('feed/<pk>/edit/', edit_feed),
-    path('fail/', fail)
+    path('fail/', fail),
+    path('feed/<pk>/remove_comment_feed/', remove_comment_feed),
+    path('feed/<pk>/new_comment_feed/', new_comment_feed),
+    # path('play/', play),
+    # path('play_two/', play_two),
+    # path('Daniel/profile/', profile),
+    # path('event/', event),
+    # path('page/', page),
 ]

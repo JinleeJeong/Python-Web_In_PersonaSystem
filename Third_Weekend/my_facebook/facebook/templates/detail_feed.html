@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>뉴스피드</title>
+    <title>자세히보기</title>
     <style>
         body {
             background-color: #d7d8dc;
@@ -166,7 +166,7 @@
     <div class="header">
         <a href="/new_feed"><div class=“btn1"><img src="/static/ic_pencil.jpg" width="22px" style="margin:9px 0 0 13px"></div></a>
         <div class="search"><input type="text" class="searchbar" placeholder="Search"></div>
-        <div class="btn2"><img src="/static/ic_info.jpg" width="22px" style="margin:9px 13px 0 0"></div>
+        <a href="/"><div class="btn2"><img src="/static/ic_info.jpg" width="22px" style="margin:9px 13px 0 0"></div></a>
     </div>
     <div class="container">
 
@@ -187,20 +187,18 @@
             {% for a in feed.comments.all %}
             <div class="comment"><span class="name">{{a.author}}</span> {{a.text}}</div>
 
-            <div class=“comment__date">{{a.created_at}} <a href="코멘트삭제주소"><img src="/static/ic_delete.png" height="16px"></a></div><br>
+            <div class=“comment__date">{{a.created_at}} <a href="/feed/{{ feed.pk }}/remove_comment_feed"><img src="/static/ic_delete.png" height="16px"></a></div><br>
             {% endfor %}
             <div class="form-wrapper">
                 <span class="help">Comments</span>
                 <form action="" method="POST">
                     {% csrf_token %}
-                    <input type="text" name="author" placeholder="이름" /><br/>
-                    <input type="password" name="password" placeholder="비밀번호" /><br/>
-                    <textarea name="text" placeholder="코멘트 내용"></textarea>
-                    <button class="button" type="submit">댓글 작성</button>
+
                 </form>
             </div>
         </div>
     </div>
+    <a href="/feed/{{ feed.pk }}/new_comment_feed"><div class=“btn1"><img src="/static/ic_pencil.jpg" width="22px" style="margin:9px 0 0 13px"></div></a>
     <div class="footer">
         <div class="tab1"><img src="/static/ic_feed.jpg" width="22px" style="margin-top: 15px"></div>
         <div class="tab2"><img src="/static/ic_person.jpg" width="20px" style="margin-top: 14px"></div>

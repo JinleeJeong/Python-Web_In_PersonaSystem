@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>게시물 수정</title>
+    <title>게시물 추가</title>
     <style>
         body {
             background-color: #d7d8dc;
@@ -155,12 +155,10 @@
        <div class="form_box">
             <form method="POST">
                 {% csrf_token %}
-                <h3>글 수정하기</h3><br>
-                <input class="input_field" type="text" placeholder="글쓴이의 이름은?" name="author" value="{{feed.author}}"><br>
+                <input class="input_field" type="text" placeholder="글쓴이의 이름은?" name="author"><br>
+                <input class="input_field" type="text" placeholder="제목을 입력해주세요." name="text"><br>
                 <input class="input_field" type="password" placeholder="글 비밀번호" name="password"><br>
-                <input class="input_field" type="text" placeholder="제목을 입력해주세요." name="title" value="{{feed.title}}"><br>
-                <textarea class="textarea_field" placeholder="내용을 입력해주세요." name="content">{{feed.text}}</textarea><br>
-                <button class="write_button">수정</button>
+                <button class="write_button">게시</button>
             </form>
         </div>
 

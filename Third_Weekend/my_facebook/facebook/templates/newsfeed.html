@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>뉴스피드</title>
+    <title>News_Feed</title>
     <style>
         body {
             background-color: #d7d8dc;
@@ -37,7 +37,9 @@
         .container {
             margin: 10px;
             background-color: #d7d8dc;
-            padding-top:32px;
+            padding-top:42px;
+            padding-bottom: 50px;
+
         }
         .footer {
             position: fixed;
@@ -82,6 +84,12 @@
         }
         .content {
             margin-top: 5px;
+            width:400px;
+            padding:0 5px;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+
         }
         .accessory {
             border-top: 1px solid #eee;
@@ -96,6 +104,7 @@
             border-bottom: 1px solid #c0c0c0;
             margin: 7px 0;
             padding: 12px;
+
         }
         .more {
             font-size: 14px;
@@ -105,6 +114,15 @@
         a {
             text-decoration: none;
         }
+        .return {
+            background-color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            float:right;
+            bottom: 0;
+
+
+        }
         </style>
 </head>
 ​
@@ -112,26 +130,29 @@
     <div class="header">
         <a href="/new_feed"><div class=“btn1"><img src="/static/ic_pencil.jpg" width="22px" style="margin:9px 0 0 13px"></div></a>
         <div class="search"><input type="text" class="searchbar" placeholder="Search"></div>
-        <div class="btn2"><img src="/static/ic_info.jpg" width="22px" style="margin:9px 13px 0 0"></div>
+
+        <a href="/"><div class="btn2"><img src="/static/ic_info.jpg" width="22px" style="margin:9px 13px 0 0"></div></a>
     </div>
     <div class="container">
         {% for feed in articles %}
         <div class="feed">
-        <h3 class="name">{{ feed.author }}</h3>
-        <div class="date">{{ feed.create_at }}</div>
+        <h3 class="name">{{ feed.author }}</h3><br>
         <a class="title">{{ feed.title }}</a>
-        <p class="content">{{ feed.text }} <a class="more" href="/feed/{{ feed.pk}}">더 보기</a></p>
+        <p class="content">{{ feed.text }} </p>
         <div class="accessory">
-            <img src="/static/ic_like.jpg" width="16px"> Like <img src="/static/ic_comment.jpg" width="16px"> Comments
+            <div class="date">{{feed.created_at}}</div>
+            <img src="/static/ic_like.jpg" width="16px"> Like <img src="/static/ic_comment.jpg" width="16px"> Comments <a class="more" href="/feed/{{feed.pk}}">더 보기</a>
         </div>
         </div>
         {% endfor %}
+
     </div>
     <div class="footer">
         <div class="tab1"><img src="/static/ic_feed.jpg" width="22px" style="margin-top: 15px"></div>
         <div class="tab2"><img src="/static/ic_person.jpg" width="20px" style="margin-top: 14px"></div>
         <div class="tab3"><img src="/static/ic_globe.jpg" width="20px" style="margin-top: 14px"></div>
         <div class="tab4"><img src="/static/ic_etc.jpg" width="20px" style="margin-top: 14px"></div>
+
     </div>
 
 
