@@ -26,7 +26,7 @@
         </ol>
     </nav>
     <div id="control">
-      <a href="write.php">쓰기</a>
+      <a href="write.php">쓰기</a> <!-- Ajax 구현  -->
 
     </div>
 
