@@ -1,0 +1,31 @@
+header {
+  text-align: center;
+  border-bottom: 1px solid gray;
+
+}
+
+body {
+  margin : 0px;
+}
+.black {
+  background-color: black;
+  color:white;
+}
+nav {
+  width:200px;
+  height:700px;
+  float :left;
+  border-right: 1px solid gray;
+}
+nav ol {
+
+  list-style: none;
+  margin : 0px;
+  padding : 20px;
+
+}
+#content {
+  float: left;
+  padding-left: 20px;
+  width: 500px;
+}
