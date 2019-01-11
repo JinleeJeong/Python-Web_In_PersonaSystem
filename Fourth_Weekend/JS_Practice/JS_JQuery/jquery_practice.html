@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery</title>
+    <script src="./jquery.js"></script>
+    <script src="./jquery-migrate-1.4.1.min.js"></script> 
+    <script>
+            $(function(){
+                $("#txt").css("color","red").css("border", "1px gray solid");
+            });    
+    </script>
+</head>
+<body>
+        
+
+    <p id="txt">내용</p>
+    
+    
+</body>
+</html>
+
+<!--다운로드 후 파일에 저장 하는 방식
+    만약, 네트워킹하고 싶으면 cndjs.com에서 주소를 가지고 온다.
+    선택자는 css와 동일하게 class = . id = #
+    .parent
+    .parents
+    .closest
+    .children
+    .prev
+    .prevUntil
+    .next
+    .nextAll
+    .nextUntil
+    .sibiling가 있다.
+    단순히 $("#txt")~로 시작하는 문법은 수용하지 않는다. $(function)이나,
+    $(document).ready(function(){
+        ~
+    })
+    $(function(){
+       ~ 
+    })
+    두개의 방식으로 가능하다. 후자의 방식이 편리하다.
+-->
