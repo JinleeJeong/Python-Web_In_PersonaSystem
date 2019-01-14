@@ -1,0 +1,61 @@
+.header {
+  display: inline-block;
+  width: 100%;
+}
+.header_nav li {
+  float: right;
+  display: block;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size : 13px;
+  color : gray;
+}
+.logo {
+  float: left;
+  margin: 0;
+  padding: 10px 0px 0px 20px;
+}
+.background img{
+  clear: both;
+  width: 100%;
+  height: 400px;
+  position:relative;
+}
+.background_text{
+  position:absolute;
+  top:100px; left: 500px;
+  color:white;
+  font-size: 4vh;
+}
+.background_li {
+  list-style: none; 
+}
+.background_li a {
+  text-decoration: none; color: white;
+}
+.background_search{
+  background-color: rgb(4, 5, 39);
+  position:absolute;
+  width: 960px;
+  bottom: 400px;
+  height: 70px;
+  margin-left:132.5px;
+  margin-right:132.5px;
+  display:block;
+}
+.container{
+  height: 450px;
+}
+
+
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
