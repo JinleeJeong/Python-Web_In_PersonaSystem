@@ -1,11 +1,14 @@
 import React, { Component, Fragment } from 'react';
 import './Template.css';
-import { ButtonToolbar, Button } from 'react-bootstrap';
+import { ButtonToolbar, Button, MenuItem, DropdownButton, Row, Col, Image} from 'react-bootstrap';
 class Template extends Component {
 
     
-    render() {
 
+    render() {
+        
+        const title = '한국어';
+        const i = 0;
         
         return (
             <Fragment>
@@ -20,17 +23,18 @@ class Template extends Component {
                     <li>회원가입</li>
                     <li>로그인</li>
                     <li>
-                      <div class="dropdown">
-                        <button type ="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                          한국어 <span class="caret"></span>
-                        </button>
-                          <ul class="dropdown-menu">
-                            <li><a href="https://github.com">Another action</a></li>
-                            <li><a href="https://github.com">Action</a></li>
-                            <li><a href="https://github.com">Something else here</a></li>
-                            <li><a href="https://github.com">Separated link</a></li>
-                          </ul>
-                      </div> 
+                        <DropdownButton
+                            bsStyle=''
+                            title={title}
+                            key={i}
+                            id={`dropdown-basic-${i}`}
+                            >
+                            <MenuItem eventKey="1">Action</MenuItem>
+                            <MenuItem eventKey="2">Another action</MenuItem>
+                            <MenuItem eventKey="3" active>
+                                Active Item
+                            </MenuItem>
+                        </DropdownButton> 
                     </li>
                     <li>새 그룹 시작하기</li>
                   </ul>
@@ -68,15 +72,30 @@ class Template extends Component {
                         <div>
                         <div>
                             <div className="info_search">정렬 기준 : 정확도 순</div>
-                                <ul className="info_photo">
-                                        <li className="info_main1"></li>
-                                        <li className="info_main2"></li>
-                                        <li className="info_main3"></li>
-                                        <li className="info_main4"></li>
-                                        <li className="info_main5"></li>
-                                        <li className="info_main6"></li>
-                                    
-                                </ul>       
+                            <div className="info_photo"> 
+                            
+                                <Row className="show-grid">
+                                    <Col xs={12} sm={8} md={4}>
+                                        <Image src={this.props.test} />
+                                    </Col>
+                                    <Col xshidden sm={8} md={4}>
+                                        <Image src={this.props.test} />
+                                    </Col>
+                                    <Col  xshidden smHidden md={4}>
+                                        <Image src={this.props.test} />
+                                    </Col>
+                                    <Col xs={8} md={4}>
+                                        <Image src={this.props.test} />
+                                    </Col>
+                                    <Col xs={8} md={4}>
+                                        <Image src={this.props.test} />
+                                    </Col>
+                                    <Col xshidden md={4}>
+                                        <Image src={this.props.test} />
+                                    </Col>
+                                </Row>
+                            
+                            </div>                        
                         </div>
                         </div>
                     </section>
@@ -88,13 +107,16 @@ class Template extends Component {
                             Study Project_Layout
                         </div>
                         <div>
-
+                        
+                            
                         </div>
             </footer>
           </div>
       </Fragment>
+      
         );
-    }
+        
+        }
 }
 
 export default Template;

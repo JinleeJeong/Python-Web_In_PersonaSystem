@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
+import Logo from './Image/logo.png';
 import './App.css';
 import Template from './component/Template';
-import Logo from './Image/logo.png';
+import test from './Image/test.png';
 class App extends Component {
-  state = {
-    
-  }
-
   render() {
     return (
-        <Template img={Logo} alt="">
-        </Template>
+      <Template img={Logo} alt="" test={test}>
+      </Template>
     );
   }
 }
