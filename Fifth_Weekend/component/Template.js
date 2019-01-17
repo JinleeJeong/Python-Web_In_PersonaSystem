@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import './Template.css';
-import { ButtonToolbar, Button, MenuItem, DropdownButton, Row, Col, Image} from 'react-bootstrap';
+import { ButtonToolbar, Button, MenuItem, DropdownButton, Row, Col, Image, Glyphicon} from 'react-bootstrap';
 class Template extends Component {
 
     
@@ -19,25 +19,33 @@ class Template extends Component {
                 <img src={this.props.img} alt={this.props.alt}></img>
               </div>
                 <div className="header_nav">
+                 
                   <ul>
-                    <li>회원가입</li>
-                    <li>로그인</li>
-                    <li>
-                        <DropdownButton
-                            bsStyle=''
-                            title={title}
-                            key={i}
-                            id={`dropdown-basic-${i}`}
-                            >
-                            <MenuItem eventKey="1">Action</MenuItem>
-                            <MenuItem eventKey="2">Another action</MenuItem>
-                            <MenuItem eventKey="3" active>
-                                Active Item
-                            </MenuItem>
-                        </DropdownButton> 
-                    </li>
-                    <li>새 그룹 시작하기</li>
-                  </ul>
+                      <ul>
+                            <li className="nav_master"><Button>
+                                                            <Glyphicon glyph="align-justify" />
+                                                        </Button>
+                                <ul className="nav">
+                                    <li>회원가입</li>
+                                    <li>로그인</li>
+                                    <li>
+                                        <DropdownButton
+                                            bsStyle=''
+                                            title={title}
+                                            key={i}
+                                            id={`dropdown-basic-${i}`}
+                                            >
+                                            <MenuItem eventKey="1"  active>English</MenuItem>
+                                            <MenuItem eventKey="2">Chinese</MenuItem>
+                                            <MenuItem eventKey="3">Japnese</MenuItem>
+                                            </DropdownButton> 
+                                        </li>
+                                    <li>새 그룹 시작하기</li> 
+                                </ul>
+                                </li>
+                        </ul>
+                    </ul>
+                  
                 </div>
               </header>
 
@@ -58,7 +66,7 @@ class Template extends Component {
                                 <div className="background_search">
                                 
                                 <div className="background_search_text">
-                                    <input type="text" placeholder="원하는 지역을 입력하세요."></input>
+                                    <input type="text" ></input>
                                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                                     <div className="background_search_text_middle">지역 : 서울, KR</div>
                                 </div>
