@@ -1,0 +1,97 @@
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  padding-top: 1px;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+.nav {
+  margin-top: 5px;
+}
+.logo {
+  width : 100px;
+  height : auto;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+.row {
+  height : 140px;
+  background-color: black;
+  color : white;
+}
+.col-md-7 {
+  margin-top: 50px;
+  padding-left: 50px;
+}
+.col-md-2.col-md-offset-2 {
+  margin-top: 30px;
+}
+.top_nav{
+  display: inline;
+  float : left;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-right: 1px solid gray;
+}
+li a:link { color: white; text-decoration: none;}
+li a:visited { color: white; text-decoration: none;}
+li a:hover { color: white; text-decoration: underline;}
+
+/*Top  Area*/
+
+
+.padding {
+  height : 40px;
+  width : 100%;
+}
+#messinger {
+  float:right;
+}
+.active {
+  padding-left: 10px;
+}
+.container-fluid {
+  margin-left: 50px;
+  height : 600px;
+}
+.about_us {
+  padding-top: 150px;
+  float : left;
+  width : 15%;
+}
+
+/* Left Content Area */
+.container_year {
+  float : left;
+  width : 10%;
+  text-align: center;
+  padding-top: 50px;
+  background-color: Khaki;
+}
+.container_content {
+  float : left;
+  width : 75%
+}
+.glyphicon.glyphicon-chevron-right {
+  padding-left: 5px;
+}
+.footer {
+  float:right;
+  margin-right: 30px;
+}
+div > .btn.btn-default{
+  margin-bottom:20px;
+}
+/* Middle Content Area */
+.content {
+  text-align: center;
+}
+.content_bottom {
+  height:400px;
+}
+.content_bottom_left {
+  float:left;
+  margin-left: 100px;
+}
+.content_bottom_right {
+  float:left;
+}
